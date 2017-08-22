@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class EvenementsType extends AbstractType
+class EvenementType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -22,7 +22,7 @@ class EvenementsType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'hacka\listeBundle\Entity\Evenements'
+            'data_class' => 'hacka\listeBundle\Entity\Evenement'
         ));
     }
 
@@ -31,7 +31,7 @@ class EvenementsType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'hacka_listebundle_evenements';
+        return 'hacka_listebundle_evenement';
     }
 
 

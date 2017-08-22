@@ -4,7 +4,7 @@ namespace hacka\listeBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class EvenementsControllerTest extends WebTestCase
+class EvenementControllerTest extends WebTestCase
 {
     /*
     public function testCompleteScenario()
@@ -13,13 +13,13 @@ class EvenementsControllerTest extends WebTestCase
         $client = static::createClient();
 
         // Create a new entry in the database
-        $crawler = $client->request('GET', '/evenements/');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /evenements/");
+        $crawler = $client->request('GET', '/evenement/');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /evenement/");
         $crawler = $client->click($crawler->selectLink('Create a new entry')->link());
 
         // Fill in the form and submit it
         $form = $crawler->selectButton('Create')->form(array(
-            'hacka_listebundle_evenements[field_name]'  => 'Test',
+            'hacka_listebundle_evenement[field_name]'  => 'Test',
             // ... other fields to fill
         ));
 
@@ -33,7 +33,7 @@ class EvenementsControllerTest extends WebTestCase
         $crawler = $client->click($crawler->selectLink('Edit')->link());
 
         $form = $crawler->selectButton('Update')->form(array(
-            'hacka_listebundle_evenements[field_name]'  => 'Foo',
+            'hacka_listebundle_evenement[field_name]'  => 'Foo',
             // ... other fields to fill
         ));
 

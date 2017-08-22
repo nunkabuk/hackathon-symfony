@@ -1,6 +1,6 @@
-hackaliste_evenements:
-    resource: "@hackalisteBundle/Resources/config/routing/evenements.yml"
-    prefix:   /evenements
+hackaliste_evenement:
+    resource: "@hackalisteBundle/Resources/config/routing/evenement.yml"
+    prefix:   /evenement
 
 hackaliste_homepage:
     path:     /

@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Evenements list</h1>
+    <h1>Evenement list</h1>
 
     <table>
         <thead>
@@ -17,9 +17,9 @@
             </tr>
         </thead>
         <tbody>
-        {% for event in evenements %}
+        {% for event in evenement %}
             <tr>
-                <td><a href="{{ path('evenements_show', { 'id': event.id }) }}">{{ event.id }}</a></td>
+                <td><a href="{{ path('evenement_show', { 'id': event.id }) }}">{{ event.id }}</a></td>
                 <td>{{ event.title }}</td>
                 <td>{{ event.description }}</td>
                 <td>{% if event.date %}{{ event.date|date('Y-m-d H:i:s') }}{% endif %}</td>
@@ -29,10 +29,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('evenements_show', { 'id': event.id }) }}">show</a>
+                            <a href="{{ path('evenement_show', { 'id': event.id }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('evenements_edit', { 'id': event.id }) }}">edit</a>
+                            <a href="{{ path('evenement_edit', { 'id': event.id }) }}">edit</a>
                         </li>
                     </ul>
                 </td>
@@ -43,7 +43,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('evenements_new') }}">Create a new event</a>
+            <a href="{{ path('evenement_new') }}">Create a new event</a>
         </li>
     </ul>
 {% endblock %}

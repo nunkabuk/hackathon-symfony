@@ -2,7 +2,7 @@
 
 namespace hacka\listeBundle\Controller;
 
-use hacka\listeBundle\Entity\Evenements;
+use hacka\listeBundle\Entity\Evenement;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
  * Evenement controller.
  *
  */
-class EvenementsController extends Controller
+class EvenementController extends Controller
 {
     /**
      * Lists all evenement entities.
@@ -20,10 +20,10 @@ class EvenementsController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $evenements = $em->getRepository('hackalisteBundle:Evenements')->findAll();
+        $evenement = $em->getRepository('hackalisteBundle:Evenement')->findAll();
 
-        return $this->render('evenements/index.html.twig', array(
-            'evenements' => $evenements,
+        return $this->render('evenement/index.html.twig', array(
+            'evenement' => $evenement,
         ));
     }
 
@@ -34,7 +34,7 @@ class EvenementsController extends Controller
     public function newAction(Request $request)
     {
         $evenement = new Evenement();
-        $form = $this->createForm('hacka\listeBundle\Form\EvenementsType', $evenement);
+        $form = $this->createForm('hacka\listeBundle\Form\EvenementType', $evenement);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -42,10 +42,10 @@ class EvenementsController extends Controller
             $em->persist($evenement);
             $em->flush();
 
-            return $this->redirectToRoute('evenements_show', array('id' => $evenement->getId()));
+            return $this->redirectToRoute('evenement_show', array('id' => $evenement->getId()));
         }
 
-        return $this->render('evenements/new.html.twig', array(
+        return $this->render('evenement/new.html.twig', array(
             'evenement' => $evenement,
             'form' => $form->createView(),
         ));
@@ -55,11 +55,11 @@ class EvenementsController extends Controller
      * Finds and displays a evenement entity.
      *
      */
-    public function showAction(Evenements $evenement)
+    public function showAction(Evenement $evenement)
     {
         $deleteForm = $this->createDeleteForm($evenement);
 
-        return $this->render('evenements/show.html.twig', array(
+        return $this->render('evenement/show.html.twig', array(
             'evenement' => $evenement,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -69,19 +69,19 @@ class EvenementsController extends Controller
      * Displays a form to edit an existing evenement entity.
      *
      */
-    public function editAction(Request $request, Evenements $evenement)
+    public function editAction(Request $request, Evenement $evenement)
     {
         $deleteForm = $this->createDeleteForm($evenement);
-        $editForm = $this->createForm('hacka\listeBundle\Form\EvenementsType', $evenement);
+        $editForm = $this->createForm('hacka\listeBundle\Form\EvenementType', $evenement);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('evenements_edit', array('id' => $evenement->getId()));
+            return $this->redirectToRoute('evenement_edit', array('id' => $evenement->getId()));
         }
 
-        return $this->render('evenements/edit.html.twig', array(
+        return $this->render('evenement/edit.html.twig', array(
             'evenement' => $evenement,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -92,7 +92,7 @@ class EvenementsController extends Controller
      * Deletes a evenement entity.
      *
      */
-    public function deleteAction(Request $request, Evenements $evenement)
+    public function deleteAction(Request $request, Evenement $evenement)
     {
         $form = $this->createDeleteForm($evenement);
         $form->handleRequest($request);
@@ -103,20 +103,20 @@ class EvenementsController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('evenements_index');
+        return $this->redirectToRoute('evenement_index');
     }
 
     /**
      * Creates a form to delete a evenement entity.
      *
-     * @param Evenements $evenement The evenement entity
+     * @param Evenement $evenement The evenement entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Evenements $evenement)
+    private function createDeleteForm(Evenement $evenement)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('evenements_delete', array('id' => $evenement->getId())))
+            ->setAction($this->generateUrl('evenement_delete', array('id' => $evenement->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;

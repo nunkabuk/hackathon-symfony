@@ -5,12 +5,12 @@ namespace hacka\listeBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Evenements
+ * Evenement
  *
- * @ORM\Table(name="evenements")
- * @ORM\Entity(repositoryClass="hacka\listeBundle\Repository\EvenementsRepository")
+ * @ORM\Table(name="evenement")
+ * @ORM\Entity(repositoryClass="hacka\listeBundle\Repository\EvenementRepository")
  */
-class Evenements
+class Evenement
 {
     /**
      * @var int
@@ -79,7 +79,7 @@ class Evenements
      *
      * @param string $title
      *
-     * @return Evenements
+     * @return Evenement
      */
     public function setTitle($title)
     {
@@ -103,7 +103,7 @@ class Evenements
      *
      * @param string $description
      *
-     * @return Evenements
+     * @return Evenement
      */
     public function setDescription($description)
     {
@@ -127,7 +127,7 @@ class Evenements
      *
      * @param \DateTime $date
      *
-     * @return Evenements
+     * @return Evenement
      */
     public function setDate($date)
     {
@@ -151,7 +151,7 @@ class Evenements
      *
      * @param string $lieu
      *
-     * @return Evenements
+     * @return Evenement
      */
     public function setLieu($lieu)
     {
@@ -175,7 +175,7 @@ class Evenements
      *
      * @param string $image
      *
-     * @return Evenements
+     * @return Evenement
      */
     public function setImage($image)
     {
@@ -199,7 +199,7 @@ class Evenements
      *
      * @param integer $idUsers
      *
-     * @return Evenements
+     * @return Evenement
      */
     public function setIdUsers($idUsers)
     {

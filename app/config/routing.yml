@@ -1,0 +1,7 @@
+hackaliste:
+    resource: "@hackalisteBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

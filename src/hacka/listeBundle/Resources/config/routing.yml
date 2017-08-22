@@ -1,0 +1,7 @@
+hackaliste_evenements:
+    resource: "@hackalisteBundle/Resources/config/routing/evenements.yml"
+    prefix:   /evenements
+
+hackaliste_homepage:
+    path:     /
+    defaults: { _controller: hackalisteBundle:Default:index }

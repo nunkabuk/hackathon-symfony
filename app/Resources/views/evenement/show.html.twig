@@ -7,31 +7,31 @@
         <tbody>
             <tr>
                 <th>Id</th>
-                <td>{{ event.id }}</td>
+                <td>{{ evenement.id }}</td>
             </tr>
             <tr>
                 <th>Title</th>
-                <td>{{ event.title }}</td>
+                <td>{{ evenement.title }}</td>
             </tr>
             <tr>
                 <th>Description</th>
-                <td>{{ event.description }}</td>
+                <td>{{ evenement.description }}</td>
             </tr>
             <tr>
                 <th>Date</th>
-                <td>{% if event.date %}{{ event.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if evenement.date %}{{ evenement.date|date('Y-m-d H:i:s') }}{% endif %}</td>
             </tr>
             <tr>
                 <th>Lieu</th>
-                <td>{{ event.lieu }}</td>
+                <td>{{ evenement.lieu }}</td>
             </tr>
             <tr>
                 <th>Image</th>
-                <td>{{ event.image }}</td>
+                <td>{{ evenement.image }}</td>
             </tr>
             <tr>
                 <th>Idusers</th>
-                <td>{{ event.idUsers }}</td>
+                <td>{{ evenement.idUsers }}</td>
             </tr>
         </tbody>
     </table>
@@ -41,7 +41,7 @@
             <a href="{{ path('evenement_index') }}">Back to the list</a>
         </li>
         <li>
-            <a href="{{ path('evenement_edit', { 'id': event.id }) }}">Edit</a>
+            <a href="{{ path('evenement_edit', { 'id': evenement.id }) }}">Edit</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

@@ -5,8 +5,12 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <!-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}" /> -->
+  <link rel="stylesheet/less" type="text/css" href="{{ asset('assets/less/hacka.less') }}" />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js" ></script>
     </head>
     <body>
+
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

@@ -38,6 +38,10 @@ class EvenementController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $file = $form['image']->getData();
+            $dir="uploads";
+            $file->move($dir, $file->getClientOriginalName());
+            $evenement->setImage($file->getClientOriginalName());
             $em = $this->getDoctrine()->getManager();
             $em->persist($evenement);
             $em->flush();

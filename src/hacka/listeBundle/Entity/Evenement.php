@@ -55,15 +55,6 @@ class Evenement
      * @ORM\Column(name="image", type="string", length=255)
      */
     private $image;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id_users", type="integer")
-     */
-    private $idUsers;
-
-
     /**
      * Get id
      *
@@ -194,28 +185,4 @@ class Evenement
         return $this->image;
     }
 
-    /**
-     * Set idUsers
-     *
-     * @param integer $idUsers
-     *
-     * @return Evenement
-     */
-    public function setIdUsers($idUsers)
-    {
-        $this->idUsers = $idUsers;
-
-        return $this;
-    }
-
-    /**
-     * Get idUsers
-     *
-     * @return int
-     */
-    public function getIdUsers()
-    {
-        return $this->idUsers;
-    }
 }
-

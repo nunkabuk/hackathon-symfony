@@ -21,7 +21,7 @@
                 <td>{{ evenement.description }}</td>
                 <td>{% if evenement.date %}{{ evenement.date|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{{ evenement.lieu }}</td>
-                <td>{{ evenement.image }}</td>
+                <td><img src ="{{img_folder}}{{ evenement.image }}"></td>
 
                 <td>
                     <ul>
